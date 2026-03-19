@@ -132,26 +132,28 @@ export default function Dashboard() {
         {/* Revenue Chart */}
         <div className="xl:col-span-2 bg-card rounded-xl border border-border p-5">
           <h3 className="font-semibold text-foreground mb-4">Revenue vs Expenses (6 Months)</h3>
-          <ResponsiveContainer width="100%" height={240}>
-            <AreaChart data={monthlyData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-              <defs>
-                <linearGradient id="income" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(221 83% 53%)" stopOpacity={0.15} />
-                  <stop offset="95%" stopColor="hsl(221 83% 53%)" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="expenses" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(0 84% 60%)" stopOpacity={0.1} />
-                  <stop offset="95%" stopColor="hsl(0 84% 60%)" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220 13% 90%)" />
-              <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-              <YAxis tick={{ fontSize: 12 }} tickFormatter={v => `$${v/1000}k`} />
-              <Tooltip formatter={(v) => `$${v.toLocaleString()}`} />
-              <Area type="monotone" dataKey="income" stroke="hsl(221 83% 53%)" strokeWidth={2} fill="url(#income)" name="Income" />
-              <Area type="monotone" dataKey="expenses" stroke="hsl(0 84% 60%)" strokeWidth={2} fill="url(#expenses)" name="Expenses" />
-            </AreaChart>
-          </ResponsiveContainer>
+          <div style={{ width: '100%', height: 240 }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={monthlyData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="incomeGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="hsl(221, 83%, 53%)" stopOpacity={0.15} />
+                    <stop offset="95%" stopColor="hsl(221, 83%, 53%)" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="expensesGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="hsl(0, 84%, 60%)" stopOpacity={0.1} />
+                    <stop offset="95%" stopColor="hsl(0, 84%, 60%)" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 90%)" />
+                <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                <YAxis tick={{ fontSize: 12 }} tickFormatter={v => `$${v/1000}k`} />
+                <Tooltip formatter={(v) => `$${v.toLocaleString()}`} />
+                <Area type="monotone" dataKey="income" stroke="hsl(221, 83%, 53%)" strokeWidth={2} fill="url(#incomeGrad)" name="Income" />
+                <Area type="monotone" dataKey="expenses" stroke="hsl(0, 84%, 60%)" strokeWidth={2} fill="url(#expensesGrad)" name="Expenses" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Alerts Feed */}
