@@ -1,0 +1,100 @@
+{
+  "name": "ComplianceEvent",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "string"
+    },
+    "related_document_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "Inspection_Scheduled",
+        "Inspection_Completed",
+        "Inspection_Failed",
+        "Violation_Issued",
+        "Violation_Resolved",
+        "Permit_Applied",
+        "Permit_Approved",
+        "Permit_Expired",
+        "Rent_Control_Review",
+        "Insurance_Renewal",
+        "Certificate_Renewal",
+        "Other"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "In_Progress",
+        "Completed",
+        "Overdue",
+        "Waived"
+      ],
+      "default": "Open"
+    },
+    "inspector_name": {
+      "type": "string"
+    },
+    "inspector_agency": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "string"
+    },
+    "required_action": {
+      "type": "string"
+    },
+    "action_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "estimated_cost": {
+      "type": "number"
+    },
+    "actual_cost": {
+      "type": "number"
+    },
+    "resolved_by": {
+      "type": "string"
+    },
+    "resolution_notes": {
+      "type": "string"
+    },
+    "follow_up_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "follow_up_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "property_id",
+    "event_type",
+    "event_date",
+    "status"
+  ]
+}

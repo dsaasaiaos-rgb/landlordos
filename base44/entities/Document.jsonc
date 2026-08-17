@@ -1,0 +1,101 @@
+{
+  "name": "Document",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "vendor_id": {
+      "type": "string"
+    },
+    "lease_id": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "Certificate_of_Occupancy",
+        "Insurance_Policy",
+        "Inspection_Report",
+        "Lease_Agreement",
+        "Lead_Paint_Disclosure",
+        "Deed",
+        "Permit",
+        "Warranty",
+        "Vendor_License",
+        "Vendor_Insurance",
+        "W9",
+        "Move_In_Checklist",
+        "Move_Out_Report",
+        "Eviction_Filing",
+        "Notice",
+        "Other"
+      ]
+    },
+    "document_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "renewal_reminder": {
+      "type": "boolean",
+      "default": true
+    },
+    "reminder_days_before": {
+      "type": "integer",
+      "default": 90
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "PDF",
+        "JPG",
+        "PNG",
+        "DOCX"
+      ]
+    },
+    "storage_url": {
+      "type": "string"
+    },
+    "version_number": {
+      "type": "integer",
+      "default": 1
+    },
+    "is_current_version": {
+      "type": "boolean",
+      "default": true
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "All_Roles",
+        "Owner_Only",
+        "Owner_Accountant"
+      ],
+      "default": "All_Roles"
+    },
+    "contains_pii": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_id",
+    "document_type"
+  ]
+}

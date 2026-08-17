@@ -1,0 +1,133 @@
+{
+  "name": "Vendor",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "service_area": {
+      "type": "string"
+    },
+    "specialty_trade": {
+      "type": "string",
+      "enum": [
+        "Plumbing",
+        "HVAC",
+        "Electrical",
+        "General",
+        "Appliance",
+        "Roofing",
+        "Pest",
+        "Cleaning",
+        "Landscaping",
+        "Painting",
+        "Other"
+      ]
+    },
+    "license_number": {
+      "type": "string"
+    },
+    "license_expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "insurance_certificate_on_file": {
+      "type": "boolean"
+    },
+    "insurance_expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "bonded": {
+      "type": "boolean"
+    },
+    "years_in_business": {
+      "type": "integer"
+    },
+    "hourly_rate": {
+      "type": "number"
+    },
+    "emergency_rate": {
+      "type": "number"
+    },
+    "minimum_call_out_fee": {
+      "type": "number"
+    },
+    "preferred_payment_method": {
+      "type": "string",
+      "enum": [
+        "Check",
+        "ACH",
+        "Credit_Card"
+      ]
+    },
+    "w9_on_file": {
+      "type": "boolean"
+    },
+    "average_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "total_jobs_completed": {
+      "type": "integer",
+      "default": 0
+    },
+    "on_time_rate": {
+      "type": "number"
+    },
+    "callback_rate": {
+      "type": "number"
+    },
+    "last_used_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "preferred_vendor": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Blacklisted"
+      ],
+      "default": "Active"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "contract_link": {
+      "type": "string"
+    },
+    "insurance_certificate_link": {
+      "type": "string"
+    },
+    "w9_link": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_name",
+    "phone",
+    "specialty_trade",
+    "status"
+  ]
+}

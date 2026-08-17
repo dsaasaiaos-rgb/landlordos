@@ -1,0 +1,147 @@
+{
+  "name": "Notice",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "string"
+    },
+    "property_id": {
+      "type": "string"
+    },
+    "lease_id": {
+      "type": "string"
+    },
+    "notice_type": {
+      "type": "string",
+      "enum": [
+        "Pay_or_Quit",
+        "Cure_or_Quit",
+        "Unconditional_Quit",
+        "Non_Renewal",
+        "Lease_Violation",
+        "Rent_Increase",
+        "Entry_Notice",
+        "Inspection_Notice",
+        "Other"
+      ]
+    },
+    "reason_for_notice": {
+      "type": "string"
+    },
+    "amount_owed": {
+      "type": "number"
+    },
+    "deadline_to_cure_or_pay": {
+      "type": "string",
+      "format": "date"
+    },
+    "deadline_to_vacate": {
+      "type": "string",
+      "format": "date"
+    },
+    "new_rent_amount": {
+      "type": "number"
+    },
+    "effective_date_of_change": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_prepared": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_served": {
+      "type": "string",
+      "format": "date"
+    },
+    "service_method": {
+      "type": "string",
+      "enum": [
+        "Hand_Delivered",
+        "Certified_Mail",
+        "Email",
+        "Posted_on_Door",
+        "Legal_Service"
+      ]
+    },
+    "acknowledgment_received": {
+      "type": "boolean",
+      "default": false
+    },
+    "acknowledgment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "proof_of_service_link": {
+      "type": "string"
+    },
+    "tenant_response": {
+      "type": "string"
+    },
+    "response_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "tenant_complied": {
+      "type": "boolean"
+    },
+    "date_tenant_complied": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Issued",
+        "Acknowledged",
+        "Awaiting_Response",
+        "Complied",
+        "Non_Complied",
+        "Eviction_Filed",
+        "Resolved"
+      ],
+      "default": "Issued"
+    },
+    "legal_action_taken": {
+      "type": "boolean",
+      "default": false
+    },
+    "eviction_filing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "Judgment_for_Landlord",
+        "Judgment_for_Tenant",
+        "Settled",
+        "Dismissed",
+        "Other"
+      ]
+    },
+    "attorney_name": {
+      "type": "string"
+    },
+    "attorney_firm": {
+      "type": "string"
+    },
+    "legal_notes": {
+      "type": "string"
+    },
+    "notice_document_link": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "unit_id",
+    "property_id",
+    "notice_type",
+    "reason_for_notice",
+    "status"
+  ]
+}

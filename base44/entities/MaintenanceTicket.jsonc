@@ -1,0 +1,198 @@
+{
+  "name": "MaintenanceTicket",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "vendor_id": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Plumbing",
+        "HVAC",
+        "Electrical",
+        "Structural",
+        "Appliance",
+        "General",
+        "Other"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Emergency",
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "ticket_scope": {
+      "type": "string",
+      "enum": [
+        "Unit-Specific",
+        "Shared-Common-Area",
+        "Entire-Property"
+      ],
+      "default": "Unit-Specific"
+    },
+    "preventive": {
+      "type": "boolean",
+      "default": false
+    },
+    "recurring_issue": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant_caused": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Assigned",
+        "In_Progress",
+        "Pending_Parts",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Open"
+    },
+    "date_reported": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_assigned": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_started": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_resolved": {
+      "type": "string",
+      "format": "date"
+    },
+    "sla_target_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "sla_met": {
+      "type": "boolean"
+    },
+    "sla_breach_reason": {
+      "type": "string"
+    },
+    "estimated_cost": {
+      "type": "number"
+    },
+    "actual_cost": {
+      "type": "number"
+    },
+    "labor_hours_actual": {
+      "type": "number"
+    },
+    "labor_rate_applied": {
+      "type": "number"
+    },
+    "is_emergency_call": {
+      "type": "boolean",
+      "default": false
+    },
+    "parts_cost": {
+      "type": "number"
+    },
+    "labor_cost": {
+      "type": "number"
+    },
+    "is_capitalized_improvement": {
+      "type": "boolean",
+      "default": false
+    },
+    "capitalized_amount": {
+      "type": "number"
+    },
+    "useful_life_years": {
+      "type": "integer"
+    },
+    "insurance_claim_filed": {
+      "type": "boolean",
+      "default": false
+    },
+    "insurance_claim_amount": {
+      "type": "number"
+    },
+    "tenant_charged": {
+      "type": "boolean",
+      "default": false
+    },
+    "amount_charged_to_tenant": {
+      "type": "number"
+    },
+    "vendor_paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "vendor_payment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "permit_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "permit_number": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "resolution_notes": {
+      "type": "string"
+    },
+    "before_photos_link": {
+      "type": "string"
+    },
+    "after_photos_link": {
+      "type": "string"
+    },
+    "invoice_link": {
+      "type": "string"
+    },
+    "tenant_notified": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant_notification_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "follow_up_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "follow_up_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "property_id",
+    "category",
+    "priority",
+    "status",
+    "date_reported",
+    "description"
+  ]
+}

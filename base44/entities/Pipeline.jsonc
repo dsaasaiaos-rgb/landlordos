@@ -1,0 +1,71 @@
+{
+  "name": "Pipeline",
+  "type": "object",
+  "properties": {
+    "property_address": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "Prospect",
+        "Under_Offer",
+        "Under_Contract",
+        "Financing",
+        "Closing",
+        "Closed",
+        "Abandoned"
+      ],
+      "default": "Prospect"
+    },
+    "probability_of_close": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "target_close_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "expected_down_payment": {
+      "type": "number"
+    },
+    "expected_cap_rate": {
+      "type": "number"
+    },
+    "expected_cash_flow_monthly": {
+      "type": "number"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "SFR",
+        "Duplex",
+        "Triplex",
+        "Multi-family",
+        "Commercial",
+        "Mixed-Use",
+        "Land"
+      ]
+    },
+    "units": {
+      "type": "integer"
+    },
+    "square_footage": {
+      "type": "integer"
+    },
+    "year_built": {
+      "type": "integer"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_address",
+    "stage"
+  ]
+}

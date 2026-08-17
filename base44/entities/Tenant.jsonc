@@ -1,0 +1,268 @@
+{
+  "name": "Tenant",
+  "type": "object",
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "description": "FK to Unit"
+    },
+    "property_id": {
+      "type": "string",
+      "description": "FK to Property (denormalized)"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date"
+    },
+    "government_id_type": {
+      "type": "string",
+      "enum": [
+        "SSN",
+        "Driver License",
+        "Passport"
+      ]
+    },
+    "primary_phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "mailing_address": {
+      "type": "string"
+    },
+    "emergency_contact_name": {
+      "type": "string"
+    },
+    "emergency_contact_phone": {
+      "type": "string"
+    },
+    "employer_name": {
+      "type": "string"
+    },
+    "employer_phone": {
+      "type": "string"
+    },
+    "application_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "background_check_status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Passed",
+        "Failed"
+      ]
+    },
+    "credit_score_at_signing": {
+      "type": "integer"
+    },
+    "monthly_income": {
+      "type": "number"
+    },
+    "income_verification": {
+      "type": "boolean"
+    },
+    "references_checked": {
+      "type": "boolean"
+    },
+    "prior_eviction": {
+      "type": "boolean"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "Current",
+        "1-30 Late",
+        "30-60 Late",
+        "60-90 Late",
+        "Collections"
+      ],
+      "default": "Current"
+    },
+    "late_payment_count_ytd": {
+      "type": "integer",
+      "default": 0
+    },
+    "late_payment_count_lifetime": {
+      "type": "integer",
+      "default": 0
+    },
+    "last_payment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_payment_amount": {
+      "type": "number"
+    },
+    "outstanding_balance": {
+      "type": "number",
+      "default": 0
+    },
+    "collections_referred": {
+      "type": "boolean"
+    },
+    "collections_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "number_of_occupants": {
+      "type": "integer"
+    },
+    "pet": {
+      "type": "boolean"
+    },
+    "pet_type_breed": {
+      "type": "string"
+    },
+    "vehicle_make_model": {
+      "type": "string"
+    },
+    "vehicle_license_plate": {
+      "type": "string"
+    },
+    "parking_spot_assigned": {
+      "type": "string"
+    },
+    "storage_unit_assigned": {
+      "type": "string"
+    },
+    "move_in_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "move_out_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lease_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lease_end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notice_given_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "monthly_rent": {
+      "type": "number"
+    },
+    "security_deposit_amount": {
+      "type": "number"
+    },
+    "deposit_held_location": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "Check",
+        "ACH",
+        "Credit Card",
+        "Cash"
+      ]
+    },
+    "auto_pay": {
+      "type": "boolean"
+    },
+    "departure_reason": {
+      "type": "string",
+      "enum": [
+        "Voluntary",
+        "Evicted",
+        "Lease Expired",
+        "Non-Renewal",
+        "Other"
+      ]
+    },
+    "forwarding_address": {
+      "type": "string"
+    },
+    "move_out_inspection_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "move_out_condition_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "damage_claim_amount": {
+      "type": "number"
+    },
+    "damage_claim_description": {
+      "type": "string"
+    },
+    "deposit_return_amount": {
+      "type": "number"
+    },
+    "deposit_return_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "risk_flag": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "default": "Low"
+    },
+    "risk_flag_reason": {
+      "type": "string"
+    },
+    "renewal_likelihood": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low",
+        "Unknown"
+      ],
+      "default": "Unknown"
+    },
+    "tenant_satisfaction_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "last_satisfaction_survey_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "complaint_count_ytd": {
+      "type": "integer",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Former",
+        "Applicant"
+      ],
+      "default": "Active"
+    }
+  },
+  "required": [
+    "property_id",
+    "first_name",
+    "last_name",
+    "email",
+    "primary_phone",
+    "monthly_rent",
+    "status"
+  ]
+}

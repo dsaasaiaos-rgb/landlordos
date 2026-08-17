@@ -1,0 +1,155 @@
+{
+  "name": "Unit",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "description": "FK to Property"
+    },
+    "unit_number": {
+      "type": "string"
+    },
+    "floor_level": {
+      "type": "integer"
+    },
+    "unit_type": {
+      "type": "string",
+      "enum": [
+        "Studio",
+        "1BR",
+        "2BR",
+        "3BR",
+        "4BR+",
+        "Commercial",
+        "Retail",
+        "Office",
+        "Warehouse",
+        "Mixed-Use"
+      ]
+    },
+    "square_footage": {
+      "type": "integer"
+    },
+    "bedrooms": {
+      "type": "integer"
+    },
+    "bathrooms": {
+      "type": "number"
+    },
+    "parking_spots": {
+      "type": "integer"
+    },
+    "storage_unit": {
+      "type": "boolean"
+    },
+    "balcony_patio": {
+      "type": "boolean"
+    },
+    "occupancy_status": {
+      "type": "string",
+      "enum": [
+        "Occupied",
+        "Vacant",
+        "Renovation",
+        "Listed",
+        "Offline"
+      ],
+      "default": "Vacant"
+    },
+    "include_in_occupancy_calc": {
+      "type": "boolean",
+      "default": true
+    },
+    "date_last_vacated": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_listed": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_rented": {
+      "type": "string",
+      "format": "date"
+    },
+    "current_rent_rate": {
+      "type": "number"
+    },
+    "market_rent_rate": {
+      "type": "number"
+    },
+    "last_market_rate_update": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_rent_increase_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_rent_increase_amount": {
+      "type": "number"
+    },
+    "turnover_cost_cleaning": {
+      "type": "number"
+    },
+    "turnover_cost_repairs": {
+      "type": "number"
+    },
+    "turnover_cost_marketing": {
+      "type": "number"
+    },
+    "last_turnover_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "move_in_photos_link": {
+      "type": "string"
+    },
+    "move_out_photos_link": {
+      "type": "string"
+    },
+    "floor_plan_link": {
+      "type": "string"
+    },
+    "appliance_inventory": {
+      "type": "string"
+    },
+    "move_in_condition_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "last_renovation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lease_type": {
+      "type": "string",
+      "enum": [
+        "Gross",
+        "NNN",
+        "Modified-Gross",
+        "MTM",
+        "Vacant"
+      ]
+    },
+    "cam_charges": {
+      "type": "number"
+    },
+    "permitted_use": {
+      "type": "string"
+    },
+    "signage_rights": {
+      "type": "string"
+    },
+    "operating_hours": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_id",
+    "unit_number",
+    "unit_type",
+    "occupancy_status"
+  ]
+}

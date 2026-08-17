@@ -1,0 +1,146 @@
+{
+  "name": "Property",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "description": "Auto-generated P-001 format"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "SFR",
+        "Duplex",
+        "Triplex",
+        "Multi-family",
+        "Commercial",
+        "Mixed-Use",
+        "Land"
+      ]
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string",
+      "default": "USA"
+    },
+    "current_market_value": {
+      "type": "number"
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "annual_property_tax": {
+      "type": "number"
+    },
+    "rent_control_jurisdiction": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Sold",
+        "Under Contract",
+        "Renovation",
+        "Offline"
+      ],
+      "default": "Active"
+    },
+    "mortgage_lender": {
+      "type": "string"
+    },
+    "mortgage_loan_number": {
+      "type": "string"
+    },
+    "mortgage_interest_rate": {
+      "type": "number"
+    },
+    "mortgage_loan_type": {
+      "type": "string"
+    },
+    "mortgage_monthly_payment": {
+      "type": "number"
+    },
+    "mortgage_outstanding_balance": {
+      "type": "number"
+    },
+    "mortgage_maturity_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "mortgage_escrow": {
+      "type": "boolean"
+    },
+    "insurance_provider": {
+      "type": "string"
+    },
+    "insurance_policy_number": {
+      "type": "string"
+    },
+    "insurance_annual_premium": {
+      "type": "number"
+    },
+    "insurance_coverage_amount": {
+      "type": "number"
+    },
+    "insurance_policy_expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "insurance_flood": {
+      "type": "boolean"
+    },
+    "insurance_umbrella": {
+      "type": "boolean"
+    },
+    "certificate_of_occupancy": {
+      "type": "boolean"
+    },
+    "last_inspection_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "next_inspection_due": {
+      "type": "string",
+      "format": "date"
+    },
+    "lead_paint_disclosure": {
+      "type": "boolean"
+    },
+    "utility_account_numbers": {
+      "type": "string"
+    },
+    "market_value_last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_type",
+    "address",
+    "city",
+    "state",
+    "status"
+  ]
+}

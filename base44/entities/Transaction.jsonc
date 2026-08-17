@@ -1,0 +1,151 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "description": "FK to Property"
+    },
+    "unit_id": {
+      "type": "string",
+      "description": "FK to Unit (nullable)"
+    },
+    "tenant_id": {
+      "type": "string",
+      "description": "FK to Tenant (nullable)"
+    },
+    "date_entered": {
+      "type": "string",
+      "format": "date"
+    },
+    "posted_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "transaction_scope": {
+      "type": "string",
+      "enum": [
+        "Unit-Specific",
+        "Property-Wide",
+        "Shared-Allocation"
+      ],
+      "default": "Unit-Specific"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "Income",
+        "Expense",
+        "Transfer",
+        "Adjustment"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Rent",
+        "Late_Fee",
+        "Deposit",
+        "Repair",
+        "Insurance",
+        "Tax",
+        "Mortgage",
+        "Utility",
+        "Management",
+        "Legal",
+        "Other"
+      ]
+    },
+    "sub_category": {
+      "type": "string"
+    },
+    "schedule_e_line": {
+      "type": "string",
+      "enum": [
+        "Advertising",
+        "Auto",
+        "Cleaning",
+        "Commissions",
+        "Insurance",
+        "Legal",
+        "Management",
+        "Mortgage_Interest",
+        "Repairs",
+        "Supplies",
+        "Taxes",
+        "Utilities",
+        "Depreciation",
+        "Other",
+        "N/A"
+      ]
+    },
+    "tax_deductible": {
+      "type": "boolean"
+    },
+    "reimbursable": {
+      "type": "boolean"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "Check",
+        "ACH",
+        "Credit_Card",
+        "Cash",
+        "Wire",
+        "Other"
+      ]
+    },
+    "reference_number": {
+      "type": "string"
+    },
+    "invoice_number": {
+      "type": "string"
+    },
+    "late_fee_applied": {
+      "type": "boolean"
+    },
+    "late_fee_amount": {
+      "type": "number"
+    },
+    "reconciliation_status": {
+      "type": "string",
+      "enum": [
+        "Unreconciled",
+        "Pending",
+        "Reconciled",
+        "Disputed"
+      ],
+      "default": "Unreconciled"
+    },
+    "reconciliation_evidence": {
+      "type": "string"
+    },
+    "void_flag": {
+      "type": "boolean",
+      "default": false
+    },
+    "void_reason": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "internal_notes": {
+      "type": "string"
+    },
+    "attachment_link": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_id",
+    "transaction_type",
+    "category",
+    "amount",
+    "date_entered"
+  ]
+}

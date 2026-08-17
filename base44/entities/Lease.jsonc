@@ -1,0 +1,174 @@
+{
+  "name": "Lease",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "string"
+    },
+    "property_id": {
+      "type": "string"
+    },
+    "lease_version": {
+      "type": "integer",
+      "default": 1
+    },
+    "document_link": {
+      "type": "string"
+    },
+    "lease_type": {
+      "type": "string",
+      "enum": [
+        "Fixed",
+        "MTM",
+        "NNN",
+        "Gross",
+        "Modified_Gross"
+      ]
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notice_period": {
+      "type": "integer",
+      "description": "Days"
+    },
+    "auto_renewal": {
+      "type": "boolean",
+      "default": false
+    },
+    "renewal_status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Renewed",
+        "Expired",
+        "Non-Renewed",
+        "Terminated"
+      ],
+      "default": "Active"
+    },
+    "jurisdiction_state": {
+      "type": "string"
+    },
+    "base_rent": {
+      "type": "number"
+    },
+    "rent_escalation_clause": {
+      "type": "boolean",
+      "default": false
+    },
+    "escalation_percentage_or_dollar": {
+      "type": "string"
+    },
+    "cam_charges": {
+      "type": "number"
+    },
+    "percentage_rent_clause": {
+      "type": "boolean",
+      "default": false
+    },
+    "percentage_rent_rate": {
+      "type": "number"
+    },
+    "security_deposit_terms": {
+      "type": "string"
+    },
+    "late_fee_policy": {
+      "type": "string"
+    },
+    "grace_period_days": {
+      "type": "integer",
+      "default": 5
+    },
+    "pet_policy": {
+      "type": "string"
+    },
+    "subletting_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "smoking_policy": {
+      "type": "string"
+    },
+    "utilities_included": {
+      "type": "boolean",
+      "default": false
+    },
+    "parking_included": {
+      "type": "boolean",
+      "default": false
+    },
+    "guarantor_name": {
+      "type": "string"
+    },
+    "guarantor_contact": {
+      "type": "string"
+    },
+    "co_signer": {
+      "type": "boolean",
+      "default": false
+    },
+    "signed_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "landlord_signed": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant_signed": {
+      "type": "boolean",
+      "default": false
+    },
+    "lead_paint_addendum": {
+      "type": "boolean",
+      "default": false
+    },
+    "mold_disclosure": {
+      "type": "boolean",
+      "default": false
+    },
+    "move_in_checklist_signed": {
+      "type": "boolean",
+      "default": false
+    },
+    "rent_control_applicable": {
+      "type": "boolean",
+      "default": false
+    },
+    "special_terms_addenda": {
+      "type": "string"
+    },
+    "ti_allowance_total": {
+      "type": "number"
+    },
+    "renewal_option_available": {
+      "type": "boolean",
+      "default": false
+    },
+    "renewal_option_count": {
+      "type": "integer"
+    },
+    "renewal_option_length": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "property_id",
+    "unit_id",
+    "tenant_id",
+    "lease_type",
+    "start_date",
+    "end_date",
+    "base_rent",
+    "renewal_status"
+  ]
+}
